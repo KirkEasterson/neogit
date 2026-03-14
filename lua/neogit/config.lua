@@ -339,6 +339,7 @@ end
 ---| "PreReset"
 ---| "PreTagCreate"
 ---| "PreTagDelete"
+---| "PreCherryPick"
 
 ---@class NeogitConfigStatusOptions
 ---@field recent_commit_count? integer The number of recent commits to display
