@@ -342,6 +342,7 @@ end
 ---| "PreCherryPick"
 ---| "PreMerge"
 ---| "PreStash"
+---| "PreRefsRefreshed"
 
 ---@class NeogitConfigStatusOptions
 ---@field recent_commit_count? integer The number of recent commits to display
