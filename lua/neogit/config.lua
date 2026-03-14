@@ -329,6 +329,7 @@ end
 ---| "PreCommit"
 ---| "PrePush"
 ---| "PrePull"
+---| "PreFetch"
 ---| "PreBranchCheckout"
 
 ---@class NeogitConfigStatusOptions
