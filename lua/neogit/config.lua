@@ -325,6 +325,7 @@ end
 ---| "date"
 
 ---@alias NeogitHook
+---| "PreStatusRefreshed"
 ---| "PreBranchCheckout"
 
 ---@class NeogitConfigStatusOptions
