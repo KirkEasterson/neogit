@@ -335,6 +335,7 @@ end
 ---| "PreBranchCheckout"
 ---| "PreBranchReset"
 ---| "PreBranchRename"
+---| "PreRebase"
 
 ---@class NeogitConfigStatusOptions
 ---@field recent_commit_count? integer The number of recent commits to display
