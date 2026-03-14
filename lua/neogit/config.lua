@@ -331,6 +331,7 @@ end
 ---| "PrePull"
 ---| "PreFetch"
 ---| "PreBranchCreate"
+---| "PreBranchDelete"
 ---| "PreBranchCheckout"
 
 ---@class NeogitConfigStatusOptions
