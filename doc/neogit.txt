@@ -667,6 +667,15 @@ The following events are emitted by Neogit:
       copy_if_present: function(filename: string, callback: function|nil)
     }
 <
+• `NeogitWorktreeGoto
+  When: A worktree was visited
+  Data: >
+    {
+      old_cwd: string,
+      new_cwd: string,
+      copy_if_present: function(filename: string, callback: function|nil)
+    }
+<
 • `NeogitDiffLoaded`
   When: A hunk is lazy loaded in the status buffer
   Data: >
