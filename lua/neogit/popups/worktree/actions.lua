@@ -214,7 +214,9 @@ function M.visit()
 
   local selected = FuzzyFinderBuffer.new(options):open_async { prompt_prefix = "visit worktree" }
   if selected and status.is_open() then
+    local cwd = vim.uv.cwd()
     status.instance():chdir(selected)
+    event.send("WorktreeGoto", autocmd_helpers(cwd, selected))
   end
 end
 
