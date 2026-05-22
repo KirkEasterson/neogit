@@ -285,7 +285,7 @@ function M:close()
   end
 end
 
-function M:chdir(dir)
+function M:chdir(dir, callback)
   local Path = require("neogit.lib.path")
 
   local destination = Path:new(dir)
@@ -298,6 +298,9 @@ function M:chdir(dir)
     vim.api.nvim_set_current_dir(dir)
     require("neogit.lib.git.repository").instance(dir)
     self.new(config.values, git.repo.worktree_root, dir):open("replace"):dispatch_refresh()
+    if callback ~= nil then
+      callback()
+    end
   end)
 end
 

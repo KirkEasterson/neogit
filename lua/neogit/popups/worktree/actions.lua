@@ -78,10 +78,10 @@ function M.checkout_worktree()
     notification.info("Added worktree")
 
     if status.is_open() then
-      status.instance():chdir(path)
+      status.instance():chdir(path, function()
+        event.send("WorktreeCreate", autocmd_helpers(cwd, path))
+      end)
     end
-
-    event.send("WorktreeCreate", autocmd_helpers(cwd, path))
   else
     notification.error(err)
   end
@@ -110,10 +110,10 @@ function M.create_worktree()
       notification.info("Added worktree")
 
       if status.is_open() then
-        status.instance():chdir(path)
+        status.instance():chdir(path, function()
+          event.send("WorktreeCreate", autocmd_helpers(cwd, path))
+        end)
       end
-
-      event.send("WorktreeCreate", autocmd_helpers(cwd, path))
     else
       notification.error(err)
     end
@@ -215,8 +215,9 @@ function M.visit()
   local selected = FuzzyFinderBuffer.new(options):open_async { prompt_prefix = "visit worktree" }
   if selected and status.is_open() then
     local cwd = vim.uv.cwd()
-    status.instance():chdir(selected)
-    event.send("WorktreeGoto", autocmd_helpers(cwd, selected))
+    status.instance():chdir(selected, function()
+      event.send("WorktreeGoto", autocmd_helpers(cwd, selected))
+    end)
   end
 end
 
